@@ -1,23 +1,57 @@
 package by.victor.jwd.task01.entity.criteria;
 
+import by.victor.jwd.task01.entity.ApplianceType;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Criteria {
 
-    private String groupSearchName;
-    private Map<String, Object> criteria = new HashMap<String, Object>();
+    private ApplianceType groupSearchName;
+    private Map<Enum<?>, Object> criteria = new HashMap<Enum<?>, Object>();
 
-    public Criteria(String groupSearchName) {
+    public Criteria(ApplianceType groupSearchName) {
         this.groupSearchName = groupSearchName;
     }
 
-    public String getGroupSearchName() {
+
+    public ApplianceType getGroupSearchName() {
         return groupSearchName;
     }
 
-    public void add(String searchCriteria, Object value) {
+    public String getStringGroupSearchName(){
+        return groupSearchName.toString();
+    }
+
+    public Map<Enum<?>, Object> getCriteria() {
+        return criteria;
+    }
+
+    public void add(Enum<?> searchCriteria, Object value) {
         criteria.put(searchCriteria, value);
+    }
+
+    @Override
+    public String toString() {
+        return "Criteria{" +
+                "groupSearchName=" + groupSearchName +
+                ", criteria=" + criteria +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Criteria criteria1 = (Criteria) o;
+        return groupSearchName == criteria1.groupSearchName &&
+                Objects.equals(criteria, criteria1.criteria);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(groupSearchName, criteria);
     }
 
     // you may add your own code here

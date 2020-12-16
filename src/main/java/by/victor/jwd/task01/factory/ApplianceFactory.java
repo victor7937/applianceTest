@@ -15,20 +15,21 @@ public class ApplianceFactory {
     private static final Map<ApplianceType, Supplier<Appliance>> templates = new HashMap<>();
     private static final Map<ApplianceType, Supplier<Customizer>> customizers = new HashMap<>();
 
-    static {
-        templates.put(OVEN, Oven::new);
-        templates.put(LAPTOP, Laptop::new);
-        templates.put(REFRIGERATOR, Refrigerator::new);
-        templates.put(VACUUMCLEANER, VacuumCleaner::new);
-        templates.put(TABLETPC, TabletPC::new);
-        templates.put(SPEAKERS, Speakers::new);
 
-        customizers.put(OVEN, OvenCustomizer::new);
-        customizers.put(LAPTOP, LaptopCustomizer::new);
-        customizers.put(REFRIGERATOR, RefrigeratorCustomizer::new);
-        customizers.put(VACUUMCLEANER, VacuumCleanerCustomizer::new);
-        customizers.put(TABLETPC, TabletPCCustomizer::new);
-        customizers.put(SPEAKERS, SpeakersCustomizer::new);
+    static {
+        templates.put(Oven, Oven::new);
+        templates.put(Laptop, Laptop::new);
+        templates.put(Refrigerator, Refrigerator::new);
+        templates.put(VacuumCleaner, VacuumCleaner::new);
+        templates.put(TabletPC, TabletPC::new);
+        templates.put(Speakers, Speakers::new);
+
+        customizers.put(Oven, OvenCustomizer::new);
+        customizers.put(Laptop, LaptopCustomizer::new);
+        customizers.put(Refrigerator, RefrigeratorCustomizer::new);
+        customizers.put(VacuumCleaner, VacuumCleanerCustomizer::new);
+        customizers.put(TabletPC, TabletPCCustomizer::new);
+        customizers.put(Speakers, SpeakersCustomizer::new);
 
     }
 
