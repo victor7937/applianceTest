@@ -5,7 +5,6 @@ import by.victor.jwd.task01.entity.Appliance;
 import by.victor.jwd.task01.entity.ApplianceType;
 import by.victor.jwd.task01.entity.criteria.Criteria;
 import by.victor.jwd.task01.entity.criteria.SearchCriteria.*;
-import by.victor.jwd.task01.factory.ApplianceFactory;
 import by.victor.jwd.task01.service.ApplianceService;
 import by.victor.jwd.task01.service.ServiceFactory;
 
@@ -22,7 +21,7 @@ public class Main {
         //////////////////////////////////////////////////////////////////
 
         Criteria criteriaOven = new Criteria(ApplianceType.Oven);//"Oven"
-        criteriaOven.add(Oven.CAPACITY, 3);
+        criteriaOven.add(Oven.CAPACITY, 33);
 
         appliance = service.find(criteriaOven);
 
@@ -31,8 +30,8 @@ public class Main {
         //////////////////////////////////////////////////////////////////
 
         criteriaOven = new Criteria(ApplianceType.Oven);
-        criteriaOven.add(Oven.HEIGHT, 200);
-        criteriaOven.add(Oven.DEPTH, 300);
+        criteriaOven.add(Oven.HEIGHT, 43.1);
+        criteriaOven.add(Oven.DEPTH, 70);
 
         appliance = service.find(criteriaOven);
 
@@ -41,9 +40,9 @@ public class Main {
         //////////////////////////////////////////////////////////////////
 
         Criteria criteriaTabletPC = new Criteria(ApplianceType.TabletPC);
-        criteriaTabletPC.add(TabletPC.COLOR, "BLUE");
-        criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 14);
-        criteriaTabletPC.add(TabletPC.MEMORY_ROM, 4);
+        criteriaTabletPC.add(TabletPC.COLOR, "red");
+        criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 15);
+        criteriaTabletPC.add(TabletPC.MEMORY_ROM, 8000);
 
         appliance = service.find(criteriaTabletPC);// find(Object...obj)
 

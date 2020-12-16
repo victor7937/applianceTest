@@ -1,5 +1,6 @@
 package by.victor.jwd.task01.dao.utils;
 
+import by.victor.jwd.task01.dao.utils.filters.Filter;
 import by.victor.jwd.task01.entity.ApplianceType;
 
 import java.io.IOException;
@@ -17,14 +18,13 @@ public class FileReader {
 
     private static final String delimiter = ":";
 
-    public static List<String> getStrings (String applianceType, String filePath) throws IOException, URISyntaxException {
+    public static List<String> getStringsByFilter (Filter applianceFilter, String fileName) throws IOException, URISyntaxException {
         List<String> resultLines = new ArrayList<>();
 
         try(Stream<String> lines = Files.lines(Paths.get(ClassLoader
-                .getSystemResource(filePath).toURI()))){
-            lines.filter(line -> line.contains(applianceType)).forEach(
-                    line -> resultLines.add(line.split(delimiter)[1].strip())
-            );
+                .getSystemResource(fileName).toURI()))){
+            lines.filter(applianceFilter::filterExpression).forEach(
+                    line -> resultLines.add(line.split(delimiter)[1].strip()));
         }
         return resultLines;
     }

@@ -24,7 +24,7 @@ public class Criteria {
         return groupSearchName.toString();
     }
 
-    public Map<Enum<?>, Object> getCriteria() {
+    public Map<Enum<?>, Object> getMapOfCriteria() {
         return criteria;
     }
 
