@@ -3,10 +3,13 @@ package by.victor.jwd.task01.dao.impl;
 
 import by.victor.jwd.task01.dao.ApplianceDAO;
 import by.victor.jwd.task01.dao.utils.FileReader;
-import by.victor.jwd.task01.dao.utils.filters.Filter;
-import by.victor.jwd.task01.dao.utils.filters.FilterFactory;
+import by.victor.jwd.task01.dao.utils.filter.Filter;
+import by.victor.jwd.task01.dao.utils.filter.FilterFactory;
+import by.victor.jwd.task01.dao.utils.parser.ApplianceParser;
+import by.victor.jwd.task01.dao.utils.parser.ParserFactory;
 import by.victor.jwd.task01.entity.Appliance;
 import by.victor.jwd.task01.entity.criteria.Criteria;
+import by.victor.jwd.task01.factory.ApplianceFactory;
 
 
 import java.io.IOException;
@@ -20,17 +23,27 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     @Override
     public Appliance find(Criteria criteria) {
-        List<String> linesByGroupName = new ArrayList<>();
+        List<String> linesByCriteria = new ArrayList<>();
         FilterFactory filterFactory = FilterFactory.getInstance();
         Filter applianceFilter = filterFactory.getApplianceFilter(criteria);
         try {
-            linesByGroupName = FileReader.getStringsByFilter(applianceFilter, FILENAME);
+            linesByCriteria = FileReader.getStringsByFilter(applianceFilter, FILENAME);
         } catch (IOException | URISyntaxException e) {
             return null;
         }
 
-       // linesByGroupName.forEach(System.out::println);
+        //linesByGroupName.forEach(System.out::println);
         //System.out.println("\n");
+
+        ParserFactory parserFactory = ParserFactory.getInstance();
+        ApplianceParser applianceParser = parserFactory.getParser(criteria.getGroupSearchName());
+        ApplianceFactory applianceFactory = ApplianceFactory.getInstance();
+
+        for (String line : linesByCriteria){
+            Appliance appliance = applianceFactory.produce(criteria.
+                    getGroupSearchName(), applianceParser.parse(line));
+            System.out.println(appliance);
+        }
 
 
         return null;

@@ -39,12 +39,12 @@ public class Main {
 
         //////////////////////////////////////////////////////////////////
 
-        Criteria criteriaTabletPC = new Criteria(ApplianceType.TabletPC);
+       /* Criteria criteriaTabletPC = new Criteria(ApplianceType.TabletPC);
         criteriaTabletPC.add(TabletPC.COLOR, "red");
         criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 15);
         criteriaTabletPC.add(TabletPC.MEMORY_ROM, 8000);
 
-        appliance = service.find(criteriaTabletPC);// find(Object...obj)
+        appliance = service.find(criteriaTabletPC);// find(Object...obj)*/
 
         PrintApplianceInfo.print(appliance);
 

@@ -1,4 +1,4 @@
-package by.victor.jwd.task01.dao.utils.filters;
+package by.victor.jwd.task01.dao.utils.filter;
 
 import by.victor.jwd.task01.entity.criteria.Criteria;
 

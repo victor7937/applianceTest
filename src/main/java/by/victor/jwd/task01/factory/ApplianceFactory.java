@@ -15,6 +15,10 @@ public class ApplianceFactory {
     private static final Map<ApplianceType, Supplier<Appliance>> templates = new HashMap<>();
     private static final Map<ApplianceType, Supplier<Customizer>> customizers = new HashMap<>();
 
+    private static final ApplianceFactory instance = new ApplianceFactory();
+
+    public static ApplianceFactory getInstance() { return instance; }
+
 
     static {
         templates.put(Oven, Oven::new);
