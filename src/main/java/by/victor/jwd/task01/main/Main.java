@@ -8,6 +8,7 @@ import by.victor.jwd.task01.entity.criteria.SearchCriteria.*;
 import by.victor.jwd.task01.service.ApplianceService;
 import by.victor.jwd.task01.service.ServiceFactory;
 
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -23,9 +24,9 @@ public class Main {
         Criteria criteriaOven = new Criteria(ApplianceType.Oven);//"Oven"
         criteriaOven.add(Oven.CAPACITY, 33);
 
-        appliance = service.find(criteriaOven);
+        List<Appliance> appliances = service.find(criteriaOven);
 
-        PrintApplianceInfo.print(appliance);
+        PrintApplianceInfo.print(appliances);
 
         //////////////////////////////////////////////////////////////////
 
@@ -33,20 +34,25 @@ public class Main {
         criteriaOven.add(Oven.HEIGHT, 43.1);
         criteriaOven.add(Oven.DEPTH, 70);
 
-        appliance = service.find(criteriaOven);
+        appliances = service.find(criteriaOven);
 
-        PrintApplianceInfo.print(appliance);
+        PrintApplianceInfo.print(appliances);
+
+        Criteria criteriaLaptop = new Criteria(ApplianceType.Laptop);//"Oven"
+        criteriaLaptop.add(Laptop.CPU, 3.2);
+
+        appliances = service.find(criteriaLaptop);
 
         //////////////////////////////////////////////////////////////////
 
-       /* Criteria criteriaTabletPC = new Criteria(ApplianceType.TabletPC);
+        Criteria criteriaTabletPC = new Criteria(ApplianceType.TabletPC);
         criteriaTabletPC.add(TabletPC.COLOR, "red");
         criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 15);
         criteriaTabletPC.add(TabletPC.MEMORY_ROM, 8000);
 
-        appliance = service.find(criteriaTabletPC);// find(Object...obj)*/
+        appliances = service.find(criteriaTabletPC);// find(Object...obj)*/
 
-        PrintApplianceInfo.print(appliance);
+        PrintApplianceInfo.print(appliances);
 
 
     }

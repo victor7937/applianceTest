@@ -23,7 +23,7 @@ public class LaptopCustomizer extends Customizer {
 
     @Override
     public void customizeAppliance(Map<Enum<?>, Object> param) {
-        laptop.setBatteryCapacity((Integer)param.get(SearchCriteria.Laptop.BATTERY_CAPACITY));
+        laptop.setBatteryCapacity((Double)param.get(SearchCriteria.Laptop.BATTERY_CAPACITY));
         laptop.setOs((String) param.get(SearchCriteria.Laptop.OS));
         laptop.setMemoryRom((Integer)param.get(SearchCriteria.Laptop.MEMORY_ROM));
         laptop.setSystemMemory((Integer)param.get(SearchCriteria.Laptop.SYSTEM_MEMORY));

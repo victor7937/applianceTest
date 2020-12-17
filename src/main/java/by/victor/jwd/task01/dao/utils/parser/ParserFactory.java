@@ -1,6 +1,6 @@
 package by.victor.jwd.task01.dao.utils.parser;
 
-import by.victor.jwd.task01.dao.utils.parser.impl.OvenParser;
+import by.victor.jwd.task01.dao.utils.parser.impl.*;
 import by.victor.jwd.task01.entity.ApplianceType;
 
 import java.util.HashMap;
@@ -14,6 +14,11 @@ public final class ParserFactory {
 
     static {
         parsers.put(ApplianceType.Oven, OvenParser::new);
+        parsers.put(ApplianceType.Laptop, LaptopParser::new);
+        parsers.put(ApplianceType.Refrigerator, RefrigeratorParser::new);
+        parsers.put(ApplianceType.VacuumCleaner, VacuumCleanerParser::new);
+        parsers.put(ApplianceType.TabletPC, TabletPCParser::new);
+        parsers.put(ApplianceType.Speakers, SpeakersParser::new);
     }
 
     private ParserFactory (){}

@@ -6,14 +6,14 @@ public class Laptop extends Appliance {
 
     public Laptop () {}
 
-    private Integer batteryCapacity;
+    private Double batteryCapacity;
     private String os;
     private Integer memoryRom;
     private Integer systemMemory;
     private Double cpu;
     private Integer displayInches;
 
-    public void setBatteryCapacity(Integer batteryCapacity) {
+    public void setBatteryCapacity(Double batteryCapacity) {
         this.batteryCapacity = batteryCapacity;
     }
 
@@ -37,7 +37,7 @@ public class Laptop extends Appliance {
         this.displayInches = displayInches;
     }
 
-    public Integer getBatteryCapacity() {
+    public Double getBatteryCapacity() {
         return batteryCapacity;
     }
 

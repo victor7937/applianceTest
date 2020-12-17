@@ -22,36 +22,32 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     private final static String FILENAME = "appliances_db.txt";
 
     @Override
-    public Appliance find(Criteria criteria) {
-        List<String> linesByCriteria = new ArrayList<>();
+    public List<Appliance> find(Criteria criteria) {
+        List<String> linesByCriteria;
         FilterFactory filterFactory = FilterFactory.getInstance();
         Filter applianceFilter = filterFactory.getApplianceFilter(criteria);
+
         try {
             linesByCriteria = FileReader.getStringsByFilter(applianceFilter, FILENAME);
         } catch (IOException | URISyntaxException e) {
             return null;
         }
-
-        //linesByGroupName.forEach(System.out::println);
-        //System.out.println("\n");
+        if (linesByCriteria.isEmpty()) {
+            return null;
+        }
 
         ParserFactory parserFactory = ParserFactory.getInstance();
         ApplianceParser applianceParser = parserFactory.getParser(criteria.getGroupSearchName());
         ApplianceFactory applianceFactory = ApplianceFactory.getInstance();
 
+        List<Appliance> applianceList = new ArrayList<>();
+
         for (String line : linesByCriteria){
             Appliance appliance = applianceFactory.produce(criteria.
                     getGroupSearchName(), applianceParser.parse(line));
-            System.out.println(appliance);
+            applianceList.add(appliance);
         }
-
-
-        return null;
+        return applianceList;
     }
 
-    // you may add your own code here
-
 }
-
-
-//you may add your own new classes
