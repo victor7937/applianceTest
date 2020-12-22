@@ -7,6 +7,7 @@ import by.victor.jwd.task01.entity.criteria.Criteria;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public final class ApplianceFilter implements Filter {
 
@@ -27,9 +28,12 @@ public final class ApplianceFilter implements Filter {
         Map<Enum<?>,Object> criteriaMap = criteria.getMapOfCriteria();
         List<Boolean> truthCheckingList = new ArrayList<>();
 
-        criteriaMap.forEach((key, value) -> truthCheckingList.add(allParamsMap.get(key.toString())
-                        .equals(value.toString())));
+        criteriaMap.forEach((key, value) -> truthCheckingList.add(Objects.equals(
+                allParamsMap.get(key.toString()), value.toString())));
 
+        if (truthCheckingList.isEmpty()) {
+            return false;
+        }
         return !truthCheckingList.contains(false);
     }
 
