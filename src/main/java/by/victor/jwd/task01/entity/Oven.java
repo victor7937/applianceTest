@@ -1,8 +1,11 @@
 package by.victor.jwd.task01.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Oven extends Appliance {
+public class Oven extends Appliance implements Serializable {
+
+    private static final long serialVersionUID = 2334439853464720068L;
 
     public Oven (){}
 

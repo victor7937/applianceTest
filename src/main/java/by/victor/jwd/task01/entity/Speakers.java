@@ -1,8 +1,11 @@
 package by.victor.jwd.task01.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Speakers extends Appliance {
+public class Speakers extends Appliance implements Serializable {
+
+    private static final long serialVersionUID = 3835330731492454628L;
 
     public Speakers(){}
 

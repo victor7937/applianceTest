@@ -11,7 +11,7 @@ import java.util.Map;
 public final class ApplianceFilter implements Filter {
 
     private Criteria criteria;
-    private String groupSearchName;
+    private final String groupSearchName;
 
     public ApplianceFilter (Criteria criteria) {
         this.criteria = criteria;

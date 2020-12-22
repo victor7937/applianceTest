@@ -8,8 +8,8 @@ import java.util.Objects;
 
 public class Criteria {
 
-    private ApplianceType groupSearchName;
-    private Map<Enum<?>, Object> criteria = new HashMap<Enum<?>, Object>();
+    private final ApplianceType groupSearchName;
+    private final Map<Enum<?>, Object> criteria = new HashMap<Enum<?>, Object>();
 
     public Criteria(ApplianceType groupSearchName) {
         this.groupSearchName = groupSearchName;
@@ -54,6 +54,5 @@ public class Criteria {
         return Objects.hash(groupSearchName, criteria);
     }
 
-    // you may add your own code here
 
 }

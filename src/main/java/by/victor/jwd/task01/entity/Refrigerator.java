@@ -1,8 +1,11 @@
 package by.victor.jwd.task01.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Refrigerator extends Appliance {
+public class Refrigerator extends Appliance implements Serializable {
+
+    private static final long serialVersionUID = -4762656915348004077L;
 
     public Refrigerator (){}
 

@@ -1,8 +1,11 @@
 package by.victor.jwd.task01.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class VacuumCleaner extends Appliance {
+public class VacuumCleaner extends Appliance implements Serializable {
+    private static final long serialVersionUID = 16789728553405450L;
+
     public VacuumCleaner (){}
 
     private Integer powerConsumption;

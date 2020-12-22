@@ -1,8 +1,11 @@
 package by.victor.jwd.task01.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Laptop extends Appliance {
+public class Laptop extends Appliance implements Serializable {
+
+    private static final long serialVersionUID = -2198810828539758890L;
 
     public Laptop () {}
 

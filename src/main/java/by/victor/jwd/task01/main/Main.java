@@ -9,12 +9,10 @@ import by.victor.jwd.task01.service.ApplianceService;
 import by.victor.jwd.task01.service.ServiceFactory;
 
 import java.util.List;
-import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
-        Appliance appliance;
 
         ServiceFactory factory = ServiceFactory.getInstance();
         ApplianceService service = factory.getApplianceService();
@@ -39,9 +37,11 @@ public class Main {
         PrintApplianceInfo.print(appliances);
 
         Criteria criteriaLaptop = new Criteria(ApplianceType.Laptop);//"Oven"
-        criteriaLaptop.add(Laptop.CPU, 3.2);
+        criteriaLaptop.add(Laptop.CPU, 3.3);
 
         appliances = service.find(criteriaLaptop);
+
+        PrintApplianceInfo.print(appliances);
 
         //////////////////////////////////////////////////////////////////
 
@@ -50,10 +50,11 @@ public class Main {
         criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 15);
         criteriaTabletPC.add(TabletPC.MEMORY_ROM, 8000);
 
-        appliances = service.find(criteriaTabletPC);// find(Object...obj)*/
+        appliances = service.find(criteriaTabletPC);
 
         PrintApplianceInfo.print(appliances);
 
+        ////////////////////////////////////////////////////////////////////
 
     }
 

@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class OneLineParser {
+public final class OneLineParser {
     private static final String applianceParamRegex = "([a-zA-Z_]+)=([a-zA-Z0-9-\\.]+)";
 
     public static Map<String,String> parseLine (String line){

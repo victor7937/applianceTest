@@ -17,16 +17,11 @@ public class ApplianceServiceImpl implements ApplianceService {
         if (!Validator.criteriaValidator(criteria)) {
             return null;
         }
-
         DAOFactory factory = DAOFactory.getInstance();
         ApplianceDAO applianceDAO = factory.getApplianceDAO();
 
-        List<Appliance> appliances = applianceDAO.find(criteria);
-
-
-        return appliances;
+        return applianceDAO.find(criteria);
     }
 
 }
 
-//you may add your own new classes
