@@ -1,14 +1,15 @@
-package by.victor.jwd.task01.dao.utils.parser.impl;
+package by.victor.jwd.task01.parser.impl;
 
-import by.victor.jwd.task01.dao.utils.parser.ApplianceParser;
-import by.victor.jwd.task01.dao.utils.parser.OneLineParser;
+import by.victor.jwd.task01.parser.ApplianceParser;
+import by.victor.jwd.task01.parser.OneLineParser;
 import by.victor.jwd.task01.entity.criteria.SearchCriteria.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RefrigeratorParser extends ApplianceParser {
+public final class  RefrigeratorParser extends ApplianceParser {
     private final Map<Enum<?>, Object> RefrigeratorMap = new HashMap<>();
+
     public RefrigeratorParser (){}
 
     @Override

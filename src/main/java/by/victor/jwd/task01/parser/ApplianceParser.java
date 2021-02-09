@@ -1,4 +1,4 @@
-package by.victor.jwd.task01.dao.utils.parser;
+package by.victor.jwd.task01.parser;
 
 import java.util.Map;
 

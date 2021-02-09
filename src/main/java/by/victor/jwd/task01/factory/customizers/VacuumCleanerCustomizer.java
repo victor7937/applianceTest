@@ -1,14 +1,12 @@
 package by.victor.jwd.task01.factory.customizers;
 
-
-
 import by.victor.jwd.task01.entity.Appliance;
 import by.victor.jwd.task01.entity.VacuumCleaner;
 import by.victor.jwd.task01.entity.criteria.SearchCriteria;
 
 import java.util.Map;
 
-public class VacuumCleanerCustomizer extends Customizer {
+public final class VacuumCleanerCustomizer extends Customizer {
     private VacuumCleaner vacuumCleaner;
 
     @Override

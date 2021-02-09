@@ -1,7 +1,7 @@
-package by.victor.jwd.task01.dao.utils.filter.impl;
+package by.victor.jwd.task01.filter.impl;
 
-import by.victor.jwd.task01.dao.utils.filter.Filter;
-import by.victor.jwd.task01.dao.utils.parser.OneLineParser;
+import by.victor.jwd.task01.filter.ApplianceFilter;
+import by.victor.jwd.task01.parser.OneLineParser;
 import by.victor.jwd.task01.entity.criteria.Criteria;
 
 import java.util.ArrayList;
@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public final class ApplianceFilter implements Filter {
+public final class ApplianceFilterImpl implements ApplianceFilter {
 
     private Criteria criteria;
     private final String groupSearchName;
 
-    public ApplianceFilter (Criteria criteria) {
+    public ApplianceFilterImpl(Criteria criteria) {
         this.criteria = criteria;
         groupSearchName = criteria.getStringGroupSearchName();
     }
@@ -28,8 +28,8 @@ public final class ApplianceFilter implements Filter {
         Map<Enum<?>,Object> criteriaMap = criteria.getMapOfCriteria();
         List<Boolean> truthCheckingList = new ArrayList<>();
 
-        criteriaMap.forEach((key, value) -> truthCheckingList.add(Objects.equals(
-                allParamsMap.get(key.toString()), value.toString())));
+        criteriaMap.forEach((key, value) -> truthCheckingList.add(Objects.equals(allParamsMap
+                .get(key.toString()), value.toString())));
 
         if (truthCheckingList.isEmpty()) {
             return false;

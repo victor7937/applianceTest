@@ -8,7 +8,7 @@ import by.victor.jwd.task01.entity.criteria.SearchCriteria;
 
 import java.util.Map;
 
-public class TabletPCCustomizer extends Customizer{
+public final class TabletPCCustomizer extends Customizer{
     private TabletPC tabletPC;
 
     @Override

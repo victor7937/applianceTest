@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 import static by.victor.jwd.task01.entity.ApplianceType.*;
 
 
-public class ApplianceFactory {
+public final class ApplianceFactory {
 
     private static final Map<ApplianceType, Supplier<Appliance>> templates = new HashMap<>();
     private static final Map<ApplianceType, Supplier<Customizer>> customizers = new HashMap<>();
@@ -18,7 +18,6 @@ public class ApplianceFactory {
     private static final ApplianceFactory instance = new ApplianceFactory();
 
     public static ApplianceFactory getInstance() { return instance; }
-
 
     static {
         templates.put(Oven, Oven::new);
@@ -34,7 +33,6 @@ public class ApplianceFactory {
         customizers.put(VacuumCleaner, VacuumCleanerCustomizer::new);
         customizers.put(TabletPC, TabletPCCustomizer::new);
         customizers.put(Speakers, SpeakersCustomizer::new);
-
     }
 
     private Appliance produceTemplate(ApplianceType ApplianceType){
@@ -55,6 +53,8 @@ public class ApplianceFactory {
             customizer.customizeAppliance(param);
             return customizer.getAppliance();
         }
-        else return null;
+        else {
+            return null;
+        }
     }
 }

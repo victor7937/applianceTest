@@ -8,7 +8,7 @@ import by.victor.jwd.task01.entity.criteria.SearchCriteria;
 
 import java.util.Map;
 
-public class SpeakersCustomizer extends Customizer {
+public final class SpeakersCustomizer extends Customizer {
 
     private Speakers speakers;
 

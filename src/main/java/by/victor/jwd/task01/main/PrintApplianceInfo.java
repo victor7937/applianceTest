@@ -5,10 +5,10 @@ import by.victor.jwd.task01.entity.Appliance;
 
 import java.util.List;
 
-public class PrintApplianceInfo {
+public final class PrintApplianceInfo {
 
     public static void print(List<Appliance> applianceList) {
-        if (applianceList == null) {
+        if (applianceList.isEmpty()) {
             System.out.println("Can't find appliances with such criteria!\n");
         }
         else{

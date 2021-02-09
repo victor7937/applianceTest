@@ -8,7 +8,7 @@ import by.victor.jwd.task01.entity.criteria.SearchCriteria;
 
 import java.util.Map;
 
-public class RefrigeratorCustomizer extends Customizer{
+public final class RefrigeratorCustomizer extends Customizer{
     private Refrigerator refrigerator;
 
     @Override

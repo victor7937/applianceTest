@@ -7,15 +7,10 @@ public final class ServiceFactory {
 
     private final ApplianceService applianceService = new ApplianceServiceImpl();
 
-    private ServiceFactory() {
-    }
+    private ServiceFactory() {}
 
-    public ApplianceService getApplianceService() {
-        return applianceService;
-    }
+    public ApplianceService getApplianceService() { return applianceService; }
 
-    public static ServiceFactory getInstance() {
-        return instance;
-    }
+    public static ServiceFactory getInstance() { return instance; }
 
 }

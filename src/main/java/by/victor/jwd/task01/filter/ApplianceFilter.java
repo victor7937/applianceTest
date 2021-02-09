@@ -1,8 +1,8 @@
-package by.victor.jwd.task01.dao.utils.filter;
+package by.victor.jwd.task01.filter;
 
 import by.victor.jwd.task01.entity.criteria.Criteria;
 
-public interface Filter {
+public interface ApplianceFilter {
     boolean filterExpression(String expression);
     void setCriteria(Criteria criteria);
 

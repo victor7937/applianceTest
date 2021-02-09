@@ -1,6 +1,6 @@
-package by.victor.jwd.task01.dao.utils.parser;
+package by.victor.jwd.task01.parser;
 
-import by.victor.jwd.task01.dao.utils.parser.impl.*;
+import by.victor.jwd.task01.parser.impl.*;
 import by.victor.jwd.task01.entity.ApplianceType;
 
 import java.util.HashMap;

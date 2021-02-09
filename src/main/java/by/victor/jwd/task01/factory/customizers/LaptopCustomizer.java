@@ -7,8 +7,7 @@ import by.victor.jwd.task01.entity.criteria.SearchCriteria;
 
 import java.util.Map;
 
-public class LaptopCustomizer extends Customizer {
-
+public final class LaptopCustomizer extends Customizer {
     private Laptop laptop;
 
     @Override

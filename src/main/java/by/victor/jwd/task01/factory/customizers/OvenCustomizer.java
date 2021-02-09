@@ -8,7 +8,7 @@ import by.victor.jwd.task01.entity.criteria.SearchCriteria;
 
 import java.util.Map;
 
-public class OvenCustomizer extends Customizer{
+public final class OvenCustomizer extends Customizer{
     private Oven oven;
 
     @Override
