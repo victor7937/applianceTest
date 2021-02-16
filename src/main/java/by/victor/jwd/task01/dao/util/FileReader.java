@@ -1,13 +1,11 @@
-package by.victor.jwd.task01.dao.utils;
+package by.victor.jwd.task01.dao.util;
 
 import by.victor.jwd.task01.filter.ApplianceFilter;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package by.victor.jwd.task01.dao.impl;
 
 import by.victor.jwd.task01.dao.ApplianceDAO;
-import by.victor.jwd.task01.dao.utils.FileReader;
+import by.victor.jwd.task01.dao.util.FileReader;
 import by.victor.jwd.task01.filter.ApplianceFilter;
 import by.victor.jwd.task01.filter.FilterFactory;
 import by.victor.jwd.task01.parser.ApplianceParser;
@@ -11,8 +11,6 @@ import by.victor.jwd.task01.entity.criteria.Criteria;
 import by.victor.jwd.task01.factory.ApplianceFactory;
 
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 

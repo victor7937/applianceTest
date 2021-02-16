@@ -1,7 +1,7 @@
 package by.victor.jwd.task01.factory;
 
 import by.victor.jwd.task01.entity.*;
-import by.victor.jwd.task01.factory.customizers.*;
+import by.victor.jwd.task01.factory.customizer.*;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package by.victor.jwd.task01.factory.customizers;
+package by.victor.jwd.task01.factory.customizer;
 
 
 

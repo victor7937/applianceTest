@@ -68,6 +68,7 @@ public class Main {
 
         PrintApplianceInfo.print(appliances);
 
+
     }
 
 }
